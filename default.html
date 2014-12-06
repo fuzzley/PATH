@@ -13,7 +13,7 @@
 <body>
 <div class="container body-content">
 
-    <div id="menu-splash" style="margin-top: 15px;">
+    <div id="menu-splash" style="margin-top: 15px; display: none;">
         <div class="form-group well well-sm" style="text-align: center; min-height: 300px; padding: 30px;">
             <h1 style="font-size: 5em;">PATH</h1>
             <h3 style="margin: 0 0 1em 0;">Personal App for Technology Help</h3>
@@ -156,7 +156,7 @@
             </div>
             <div class="row margin-sm">
                 <button class="btn btn-primary nav-btn" data-targetroute="#Browse/Houseware">
-                    <span style="float: left;"><i class="fa fa-plug"></i>&nbsp;&nbsp;Houseware</span>
+                    <span style="float: left;"><i class="fa fa-plug"></i>&nbsp;&nbsp;Home Appliances</span>
                     <span style="float: right;"><i class="fa fa-angle-right fa-lg"></i></span>
                 </button>
             </div>
@@ -247,7 +247,7 @@
 
     <div id="menu-browse-houseware" style="display: none;">
         <div>
-            <h1>Houseware</h1>
+            <h1>Home Appliances</h1>
         </div>
         <div class="form-group well well-sm container-fluid">
             <div class="row margin-sm">
@@ -280,12 +280,18 @@
                     <span style="float: right;"><i class="fa fa-angle-right fa-lg"></i></span>
                 </button>
             </div>
+            <div class="row margin-sm">
+                <button class="btn btn-primary nav-btn" data-targetroute="#Search/Results?categoryId=television">
+                    <span style="float: left;">Television</span>
+                    <span style="float: right;"><i class="fa fa-angle-right fa-lg"></i></span>
+                </button>
+            </div>
         </div>
     </div>
 
     <div id="menu-browse-computers" style="display: none;">
         <div>
-            <h1>Computers</h1>
+            <h1>Computer</h1>
         </div>
         <div class="form-group well well-sm container-fluid">
             <div class="row margin-sm">
@@ -301,8 +307,8 @@
                 </button>
             </div>
             <div class="row margin-sm">
-                <button class="btn btn-primary nav-btn" data-targetroute="#Search/Results?categoryId=monitor">
-                    <span style="float: left;">Monitor</span>
+                <button class="btn btn-primary nav-btn" data-targetroute="#Browse/Accessories">
+                    <span style="float: left;">Accessories</span>
                     <span style="float: right;"><i class="fa fa-angle-right fa-lg"></i></span>
                 </button>
             </div>
@@ -319,8 +325,52 @@
                 </button>
             </div>
             <div class="row margin-sm">
-                <button class="btn btn-primary nav-btn" data-targetroute="#Search/Results?categoryId=accessory">
-                    <span style="float: left;">Accessory</span>
+                <button class="btn btn-primary nav-btn" data-targetroute="#Search/Results?categoryId=tablet">
+                    <span style="float: left;">Tablet</span>
+                    <span style="float: right;"><i class="fa fa-angle-right fa-lg"></i></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu-browse-accessories" style="display: none;">
+        <div>
+            <h1>Accessories</h1>
+        </div>
+        <div class="form-group well well-sm container-fluid">
+            <div class="row margin-sm">
+                <button class="btn btn-info nav-btn" data-targetroute="#Home">
+                    <span style="float: left;"><i class="fa fa-angle-double-left fa-lg"></i></span>
+                    <span style="float: right;">Home</span>
+                </button>
+            </div>
+            <div class="row margin-sm">
+                <button class="btn btn-info nav-btn" data-targetroute="#Browse/Computers">
+                    <span style="float: left;"><i class="fa fa-angle-left fa-lg"></i></span>
+                    <span style="float: right;">Back</span>
+                </button>
+            </div>
+            <div class="row margin-sm">
+                <button class="btn btn-primary nav-btn" data-targetroute="#Search/Results?categoryId=computer-speakers">
+                    <span style="float: left;">Computer Speakers</span>
+                    <span style="float: right;"><i class="fa fa-angle-right fa-lg"></i></span>
+                </button>
+            </div>
+            <div class="row margin-sm">
+                <button class="btn btn-primary nav-btn" data-targetroute="#Search/Results?categoryId=monitor">
+                    <span style="float: left;">Monitors</span>
+                    <span style="float: right;"><i class="fa fa-angle-right fa-lg"></i></span>
+                </button>
+            </div>
+            <div class="row margin-sm">
+                <button class="btn btn-primary nav-btn" data-targetroute="#Search/Results?categoryId=mouse">
+                    <span style="float: left;">Mice</span>
+                    <span style="float: right;"><i class="fa fa-angle-right fa-lg"></i></span>
+                </button>
+            </div>
+            <div class="row margin-sm">
+                <button class="btn btn-primary nav-btn" data-targetroute="#Search/Results?categoryId=keyboard">
+                    <span style="float: left;">Keyboards</span>
                     <span style="float: right;"><i class="fa fa-angle-right fa-lg"></i></span>
                 </button>
             </div>
@@ -341,7 +391,7 @@
                 </button>
             </div>
             <div class="row margin-sm">
-                <button class="btn btn-info nav-btn" data-targetroute="#Home">
+                <button class="btn btn-info nav-btn" data-bind="attr: { 'data-targetroute': lastSearchFrom() || '#Home' }">
                     <span style="float: left;"><i class="fa fa-angle-left fa-lg"></i></span>
                     <span style="float: right;">Back</span>
                 </button>
@@ -383,7 +433,7 @@
                 </button>
             </div>
             <div class="row margin-sm">
-                <button class="btn btn-info nav-btn" data-targetroute="#Search/Results">
+                <button class="btn btn-info nav-btn" data-bind="attr: { 'data-targetroute': lastSearchUrl() || '#Search/Results' }" data-targetroute="#Search/Results">
                     <span style="float: left;"><i class="fa fa-angle-left fa-lg"></i></span>
                     <span style="float: right;">Back</span>
                 </button>
@@ -606,21 +656,21 @@
                     <legend>Videos</legend>
                     <div class="row">
                         <div class="col-sm-12 video-row">
-                            <iframe type="text/html" class="video-iframe"
+                            <iframe id="appliance-manual-video-0" type="text/html" class="video-iframe"
                                     src="http://www.youtube.com/embed/5upTJFpc5j8"
                                     frameborder="0"></iframe>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 video-row">
-                            <iframe type="text/html" class="video-iframe"
+                            <iframe id="appliance-manual-video-1" type="text/html" class="video-iframe"
                                     src="http://www.youtube.com/embed/Ef8b3C8jxGo"
                                     frameborder="0"></iframe>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 video-row">
-                            <iframe type="text/html" class="video-iframe"
+                            <iframe id="appliance-manual-video-2" type="text/html" class="video-iframe"
                                     src="http://www.youtube.com/embed/drlK8xgFNlU"
                                     frameborder="0"></iframe>
                         </div>
@@ -651,6 +701,8 @@
 
 <script src="scripts/PATH/Product.js"></script>
 
+<script type="text/javascript" src="http://www.youtube.com/player_api?version=3"></script>
+
 <script type="text/javascript">
     var PATH = PATH || {};
 
@@ -674,18 +726,25 @@
             {
                 url: 'Search/Barcode',
                 name: 'Search by Barcode',
-                $element: '#menu-find-by-barcode'
+                $element: '#menu-find-by-barcode',
+                onLoad: function () {
+                    Page.vm.lastSearchFrom('#Search/Barcode');
+                }
             },
             {
                 url: 'Search/ModelNumber',
                 name: 'Search by Model Number',
-                $element: '#menu-find-by-model-number'
+                $element: '#menu-find-by-model-number',
+                onLoad: function () {
+                    Page.vm.lastSearchFrom('#Search/ModelNumber');
+                }
             },
             {
                 url: 'Search/Results',
                 name: 'Search Results',
                 $element: '#menu-search-results',
                 onLoad: function (query) {
+                    Page.vm.lastSearchUrl(hasher.getHash());
                     $('#searching-overlay').show();
                     setTimeout(function () {
                         if (query && query.categoryId) {
@@ -717,22 +776,44 @@
             {
                 url: 'Browse/Mobile',
                 name: 'Browse Appliances - Mobile Devices',
-                $element: '#menu-browse-mobile'
+                $element: '#menu-browse-mobile',
+                onLoad: function () {
+                    Page.vm.lastSearchFrom('#Browse/Mobile');
+                }
             },
             {
                 url: 'Browse/Entertainment',
                 name: 'Browse Appliances - Home Entertainment',
-                $element: '#menu-browse-entertainment'
+                $element: '#menu-browse-entertainment',
+                onLoad: function () {
+                    Page.vm.lastSearchFrom('#Browse/Entertainment');
+                }
             },
             {
                 url: 'Browse/Houseware',
                 name: 'Browse Appliances - Houseware',
-                $element: '#menu-browse-houseware'
+                $element: '#menu-browse-houseware',
+                onLoad: function () {
+                    Page.vm.lastSearchFrom('#Browse/Houseware');
+                }
             },
             {
                 url: 'Browse/Computers',
                 name: 'Browse Appliances - Computers',
-                $element: '#menu-browse-computers'
+                $element: '#menu-browse-computers',
+                leadsToSearch: true,
+                onLoad: function () {
+                    Page.vm.lastSearchFrom('#Browse/Computers');
+                }
+            },
+            {
+                url: 'Browse/Accessories',
+                name: 'Browse Appliances - Accessories',
+                $element: '#menu-browse-accessories',
+                leadsToSearch: true,
+                onLoad: function () {
+                    Page.vm.lastSearchFrom('#Browse/Accessories');
+                }
             },
             {
                 url: 'Appliance/Home',
@@ -796,6 +877,7 @@
             }
         ];
         Page.currentMenu = null;
+        Page.ytVideos = [];
 
         Page.categoryIds ={
             //mobile
@@ -814,7 +896,10 @@
             MONITOR: 'monitor',
             DESKTOP: 'desktop',
             LAPTOP: 'laptop',
-            ACCESSORY: 'accessory'
+            //computers - accessories
+            COMPUTER_SPEAKERS: 'computer-speakers',
+            MOUSE: 'mouse',
+            KEYBOARD: 'keyboard'
         };
         Page.productDescriptors = [
             { //television is first for demo purposes
@@ -864,6 +949,14 @@
                 iconUrl: 'images/speakers01.jpg',
                 modelNumber: 'HHSA32',
                 barcode: '994556'
+            },
+            {
+                id: 'speakers02',
+                name: 'Bose - CineMate',
+                categoryId: Page.categoryIds.COMPUTER_SPEAKERS,
+                iconUrl: 'images/speakers01.jpg',
+                modelNumber: 'HHSA33',
+                barcode: '941256'
             },
             {
                 id: 'gaming01',
@@ -922,21 +1015,21 @@
                 barcode: '612677'
             },
             {
-                id: 'accessory01',
+                id: 'mice01',
                 name: 'Logitech Wireless Mouse M320',
-                categoryId: Page.categoryIds.ACCESSORY,
+                categoryId: Page.categoryIds.MOUSE,
                 iconUrl: 'images/accessory01.jpg',
                 modelNumber: 'JUJSERY23',
                 barcode: '72341651'
             },
             {
-                id: 'accessory02',
+                id: 'keyboard01',
                 name: 'Logitech Wireless Combo MK270',
-                categoryId: Page.categoryIds.ACCESSORY,
+                categoryId: Page.categoryIds.KEYBOARD,
                 iconUrl: 'images/accessory02.jpg',
                 modelNumber: 'HHAS35124',
                 barcode: '722237788'
-            },
+            }
         ];
         Page.products = []; //gets filled in inside _populateProducts, based on product descriptors
 
@@ -948,7 +1041,44 @@
             Page._initializeVM();
             ko.applyBindings(Page.vm);
 
+            Page._initializeYoutubeVideos();
             Page._initializeRouting();
+
+            if (Page.currentMenu == null) {
+                hasher.setHash('#Splash');
+            }
+        };
+
+        Page.stopAllYoutubeVideos = function () {
+            Page.ytVideos.forEach(function (ytVideo) {
+                if (ytVideo.stopVideo) {
+                    ytVideo.stopVideo();
+                }
+            });
+        };
+
+        Page.hideAllMenus = function () {
+            Page.menus.forEach(function (menu) {
+                $(menu.$element).hide();
+            });
+            $('#searching-overlay').hide();
+        };
+
+        Page._initializeYoutubeVideos = function () {
+            Page.ytVideos.length = 0;
+
+            var YT = window.YT || null;
+            if (!YT || !YT.ready) { //in case we didn't load youtube player api, don't do anything
+                return;
+            } //else
+
+            YT.ready(function () {
+                Page.ytVideos.length = 0;
+                var $players = $('iframe.video-iframe');
+                for (var i = 0; i < $players.length; i++) {
+                    Page.ytVideos.push(new YT.Player($($players[i]).attr('id')));
+                }
+            });
         };
 
         Page._populateProducts = function () {
@@ -961,16 +1091,11 @@
         Page._initializeRouting = function () {
 
             var initCrossroads = function () {
-                var hideAllMenus = function () {
-                    Page.menus.forEach(function (menu) {
-                        $(menu.$element).hide();
-                    });
-                    $('#searching-overlay').hide();
-                };
 
                 Page.menus.forEach(function (menu) {
                     crossroads.addRoute(menu.url + ':?query:', function (query) {
-                        hideAllMenus();
+                        Page.hideAllMenus();
+                        Page.stopAllYoutubeVideos();
                         $(menu.$element).show();
                         Page.currentMenu = menu;
                         if (typeof (Page.currentMenu.onLoad) === 'function') {
@@ -1021,6 +1146,9 @@
 
             //general properties
             Page.vm = {};
+            Page.vm.lastSearchFrom = ko.observable(null);
+            Page.vm.lastSearchUrl = ko.observable(null);
+
             Page.vm.modelNumber = ko.observable('32LW5700');
             Page.vm.barcode = ko.observable('5555555');
             Page.vm.products = ko.observableArray(Page.products);
@@ -1077,6 +1205,7 @@
                 });
                 $capture.trigger('click');
             };
+
         };
 
         return Page;
