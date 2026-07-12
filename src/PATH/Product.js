@@ -1,4 +1,4 @@
-var PATH = PATH || {};
+import { PATH } from "../PATH.namespace.js";
 
 PATH.Product = (function (Product, $, undefined) {
     'use strict';
